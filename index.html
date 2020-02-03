@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+   
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+   <!-- CUSTOM CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Seleccion Desarrollo</title>
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<!--AQUI COMIENZA LO PROPIO DE BOOTSTRAP-->
+
+  <!-- NAVIGATION -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img src="img/logo.jpg" style="width: 20%;">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+   <!-- HEADER -->
+   <header class="main-header">
+    <div class="background-overlay text-white py-5">
+      <div class="container">
+        <div class="row d-flex h-100">
+          <div class="col-sm-6 text-center justify-content-center align-self-center">
+            <h1>
+              Bienvenido, registre una cuenta para ser parte del sistema de votaciones como invitado
+            </h1>
+            <p>Esta pagina solo tiene capacidad para registrar e iniciar sesión de los participantes. Para realizar las votaciones como tal debe descargar la app en la play store.</p>
+            <a href="#" class="btn btn-outline-secondary btn-lg text-white">
+              Descargar App
+            </a>
+          </div>
+          <div class="col-sm-6">
+            <img src="img/product.jpg" class="img-fluid d-none d-sm-block">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<!--AQUI TERMINA LO PROPIO DE BOOTSTRAP-->
+
+
+
+
+
+
+
+
+  <div class="container">
+
+  <nav class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand">Sistema de votaciones</a>
+    <div class="form-inline">
+      <div class="custom-control custom-checkbox my-1 mr-sm-2" id="checkLogin">
+        <input type="checkbox" checked data-toggle="toggle" data-on="Registrarse" data-off="Entrar" id="loginRegistrarse">
+      </div>
+      
+
+      <div id="areaRegistro" style="display: none;"> 
+        <input id="name" type="name" placeholder="Nombre" class="form-control mr-sm-2">
+      <input id="email" type="email" placeholder="Ingresa email" class="form-control mr-sm-2">
+      <input id="pass" type="password" placeholder="Ingresa contraseña" class="form-control mr-sm-2">
+      <input id="country" type="country" placeholder="Ubicacion" class="form-control mr-sm-2">
+      <button onclick="registrar()" class="btn btn-outline-success my-2 my-sm-0">Registrarte</button>
+    </div>
+
+    <div id="areaLogin" style="display: none;">
+      <input id="emailA" type="email" placeholder="Ingresa email" class="form-control mr-sm-2">
+      <input id="passA" type="password" placeholder="Ingresa contraseña" class="form-control mr-sm-2">
+      <button onclick="acceso()" id="botonAcceso" class="btn btn-outline-success my-2 my-sm-0">Iniciar sesión</button>
+      <button type="button" class="btn btn-danger" id="btnCerrar" onClick="cerrar()" style="display: none;"> Cerrar sesión </button>
+    </div>
+  
+    </div>
+  </nav>
+
+  </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+ 
+  
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+
+
+<script src="app.js"></script>
+</body>
+
+</html>
